@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08.MagicSum", "08.MagicSum\08.MagicSum.csproj", "{55862A49-CA8E-439D-BC9F-D64FAF3EC79D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "09.KaminoFactory", "09.KaminoFactory\09.KaminoFactory.csproj", "{FB483DBC-2EC4-47FD-B126-E278FE6090E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{55862A49-CA8E-439D-BC9F-D64FAF3EC79D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{55862A49-CA8E-439D-BC9F-D64FAF3EC79D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{55862A49-CA8E-439D-BC9F-D64FAF3EC79D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{55862A49-CA8E-439D-BC9F-D64FAF3EC79D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB483DBC-2EC4-47FD-B126-E278FE6090E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB483DBC-2EC4-47FD-B126-E278FE6090E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB483DBC-2EC4-47FD-B126-E278FE6090E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB483DBC-2EC4-47FD-B126-E278FE6090E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
