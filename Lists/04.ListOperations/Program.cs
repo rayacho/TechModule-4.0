@@ -73,6 +73,8 @@ namespace _04.ListOperations
 								break;
 						}
 						break;
+					default:
+						throw new Exception("Invalid command");
 				}
 			}
 
