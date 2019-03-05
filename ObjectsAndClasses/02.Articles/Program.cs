@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Linq;
 
-namespace Articles
+namespace _02.Articles
 {
 	class Program
 	{
@@ -13,30 +12,29 @@ namespace Articles
 			string author = input[2];
 			Article article = new Article(title, content, author);
 
-			int number = int.Parse(Console.ReadLine());
+			int numberOfCommands = int.Parse(Console.ReadLine());
 
-			for(int i = 0; i < number; i++)
+			for (int i = 0; i < numberOfCommands; i++)
 			{
-				string[] allCommand = Console.ReadLine().Split(':');
-				string command = allCommand[0];
-				string replacement = allCommand.Where(val => val != command).ToString();
-				switch(command)
+				string[] command = Console.ReadLine().Split(": ").ToArray();
+				switch (command[0])
 				{
 					case "Edit":
-						article.Edit(replacement);
+						article.Edit(command[1]);
 						break;
 					case "ChangeAuthor":
-						article.ChangeAuthor(replacement);
+						article.ChangeAuthor(command[1]);
 						break;
 					case "Rename":
-						article.Rename(replacement);
+						article.Rename(command[1]);
 						break;
 				}
 			}
 
-			Console.WriteLine($"{article.Title} - {article.Content}: {article.Author}");
+			Console.WriteLine(article.ToString());
 		}
 	}
+
 
 	public class Article
 	{
@@ -52,20 +50,20 @@ namespace Articles
 			Content = content;
 			Author = author;
 		}
-		
-		public void Edit(string newContent)
+
+		public void Edit(string content)
 		{
-			Content = newContent;
+			Content = content;
 		}
 
-		public void ChangeAuthor(string newName)
+		public void ChangeAuthor(string author)
 		{
-			Author = newName;
+			Author = author;
 		}
 
-		public void Rename(string newName)
+		public void Rename(string title)
 		{
-			Title = newName;
+			Title = title;
 		}
 
 		public override string ToString()
