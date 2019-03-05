@@ -19,11 +19,13 @@ namespace _10.SoftUniCoursePlanning
 				{
 					case "course start":
 						int i = 1;
+
 						foreach (string item in courses)
 						{
 							Console.WriteLine(i + "." + item);
 							i++;
 						}
+
 						finish = true;
 						break;
 
@@ -32,6 +34,7 @@ namespace _10.SoftUniCoursePlanning
 						{
 							courses.Add(command[1]);
 						}
+
 						break;
 
 					case "Insert":
@@ -41,6 +44,7 @@ namespace _10.SoftUniCoursePlanning
 							int anotherIndex = int.Parse(command[2]);
 							courses.Insert(anotherIndex, title);
 						}
+
 						break;
 
 					case "Remove":
@@ -65,6 +69,7 @@ namespace _10.SoftUniCoursePlanning
 						{
 							courses.Remove(lessonToRemove);
 						}
+
 						break;
 
 					case "Swap":
@@ -100,6 +105,7 @@ namespace _10.SoftUniCoursePlanning
 								courses[indexOfFirstCourse] = secondCourse;
 							}
 						}
+
 						break;
 
 					case "Exercise":
@@ -119,6 +125,7 @@ namespace _10.SoftUniCoursePlanning
 								courses.Add(command[1] + "-Exercise");
 							}
 						}
+
 						break;
 				}
 			}
