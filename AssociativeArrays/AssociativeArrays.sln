@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssociativeArrays", "AssociativeArrays\AssociativeArrays.csproj", "{C510E399-7614-4EA0-84CB-A60F219D51BB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.AMinerTask", "02.AMinerTask\02.AMinerTask.csproj", "{E83F6072-943D-4CB4-A6DB-9907D41E035C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C510E399-7614-4EA0-84CB-A60F219D51BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C510E399-7614-4EA0-84CB-A60F219D51BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C510E399-7614-4EA0-84CB-A60F219D51BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C510E399-7614-4EA0-84CB-A60F219D51BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E83F6072-943D-4CB4-A6DB-9907D41E035C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E83F6072-943D-4CB4-A6DB-9907D41E035C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E83F6072-943D-4CB4-A6DB-9907D41E035C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E83F6072-943D-4CB4-A6DB-9907D41E035C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
