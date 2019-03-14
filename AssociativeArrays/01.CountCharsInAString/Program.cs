@@ -25,7 +25,7 @@ namespace _01.CountCharsInAString
                 }
             }
 
-            foreach (var pair in chars)
+            foreach (KeyValuePair<char, int> pair in chars)
             {
                 Console.WriteLine($"{pair.Key} -> {pair.Value}");
             }

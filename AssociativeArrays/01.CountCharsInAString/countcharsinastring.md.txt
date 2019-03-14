@@ -1,0 +1,4 @@
+# Count Chars In A String
+Write a program which counts all characters in a string except space (' '). 
+Print all occurrences in the following format:
+{char} -> {occurrences}
