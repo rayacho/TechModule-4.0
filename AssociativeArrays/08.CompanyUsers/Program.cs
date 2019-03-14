@@ -40,10 +40,10 @@ namespace _08.CompanyUsers
 
             }
 
-            foreach (var item in employ.OrderBy(x => x.Key))
+            foreach (KeyValuePair<string, List<string>> item in employ.OrderBy(x => x.Key))
             {
                 Console.WriteLine(item.Key);
-                var sorted = item.Value;
+                List<string> sorted = item.Value;
 
                 foreach (var employId in sorted)
                 {
