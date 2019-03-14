@@ -33,7 +33,8 @@ namespace _07.StudentAcademy
 
             foreach (var student in newStudents)
             {
-                Console.WriteLine($"{student.Key} -> {student.Value.Average():F2}");
+                double average = student.Value.Average();
+                Console.WriteLine($"{student.Key} -> {average:F2}");
             }
         }
     }
