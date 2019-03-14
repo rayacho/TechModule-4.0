@@ -7,28 +7,42 @@ namespace _04.Orders
     {
         static void Main(string[] args)
         {
-            Dictionary<string, Dictionary<double, int>> products = new Dictionary<string, Dictionary<double, int>>();
+            Dictionary<string, List<double>> products = new Dictionary<string, List<double>>();
             string command = Console.ReadLine();
 
             while (command != "buy")
             {
-                string[] productInfo = command.Split(' ');
-                string name = productInfo[0];
-                double price = double.Parse(productInfo[1]);
-                int quantity = int.Parse(productInfo[2]);
+                string[] input = command.Split(' ');
+                string product = input[0];
+                double price = double.Parse(input[1]);
+                double quantity = double.Parse(input[2]);
 
-                if (!products.ContainsKey(name))
+                List<double> priceAndQuantity = new List<double>();
+                priceAndQuantity.Add(price);
+                priceAndQuantity.Add(quantity);
+
+                if (!products.ContainsKey(product))
                 {
-                    products.Add(name, new Dictionary<double, int>());
-                    products[name].Add(price, quantity);
+                    products.Add(product, priceAndQuantity);
                 }
                 else
                 {
-                    if (!products[name].ContainsKey(price))
+                    products[product][1] += quantity;
+
+                    if (products[product][0] != price)
                     {
-                        products[name]
+                        products[product][0] = price;
                     }
                 }
+
+                command = Console.ReadLine();
+            }
+
+            foreach (var product in products)
+            {
+                string name = product.Key;
+                double totalPrice = product.Value[0] * product.Value[1];
+                Console.WriteLine($"{name} -> {totalPrice:F2}");
             }
         }
     }
