@@ -7,9 +7,10 @@ namespace _07.NxNMatrix
 		static void Main(string[] args)
 		{
 			int number = int.Parse(Console.ReadLine());
-			Matrix(number);
 
+			Matrix(number);
 		}
+
 		static void Matrix(int n)
 		{
 			for(int i = 0; i < n; i++)
@@ -18,6 +19,7 @@ namespace _07.NxNMatrix
 				{
 					Console.Write(n + " ");
 				}
+
 				Console.WriteLine();
 			}
 		}
