@@ -16,9 +16,9 @@ namespace _02.ChangeList
 				elements.Add(element);
 			}
 
-			string command;
+			string command = Console.ReadLine();
 
-			while ((command = Console.ReadLine()) != "end")
+			while (command != "end")
 			{
 				string[] array = command.Split().ToArray();
 				string action = array[0];
@@ -28,12 +28,18 @@ namespace _02.ChangeList
 					case "Delete":
 						int numberToDelete = int.Parse(array[1]);
 						elements.Remove(numberToDelete);
+
 						break;
+
 					case "Insert":
 						int numberToInsert = int.Parse(array[1]);
 						int position = int.Parse(array[2]);
 						elements.Insert(position, numberToInsert);
+
 						break;
+
+                    default:
+                        throw new ArgumentException();
 				}
 			}
 
