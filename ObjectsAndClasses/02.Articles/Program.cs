@@ -18,16 +18,22 @@ namespace _02.Articles
 			for (int i = 0; i < numberOfCommands; i++)
 			{
 				string[] command = Console.ReadLine().Split(": ").ToArray();
+
 				switch (command[0])
 				{
 					case "Edit":
 						article.Edit(command[1]);
+
 						break;
+
 					case "ChangeAuthor":
 						article.ChangeAuthor(command[1]);
+
 						break;
+
 					case "Rename":
 						article.Rename(command[1]);
+
 						break;
 				}
 			}
@@ -47,9 +53,9 @@ namespace _02.Articles
 
 		public Article(string title, string content, string author)
 		{
-			Title = title;
-			Content = content;
-			Author = author;
+			Title = title ?? throw new ArgumentNullException(nameof(title));
+			Content = content ?? throw new ArgumentNullException(nameof(content));
+			Author = author ?? throw new ArgumentNullException(nameof(author));
 		}
 
 		public void Edit(string content)
