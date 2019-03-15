@@ -14,9 +14,11 @@ namespace _08.MagicSum
 			foreach (int num in nums)
 			{
 				int sum = nums[j];
+
 				for(int i = j + 1; i < nums.Length; i++)
 				{
 					sum += nums[i];
+
 					if(sum == neededSum)
 					{
 						Console.WriteLine($"{nums[j]} {nums[i]}");
