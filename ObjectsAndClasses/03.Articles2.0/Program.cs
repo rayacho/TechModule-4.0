@@ -27,13 +27,21 @@ namespace _03.Articles2._0
 			{
 				case "title":
 					articles = articles.OrderBy(x => x.Title).ToList();
+
 					break;
+
 				case "content":
 					articles = articles.OrderBy(x => x.Content).ToList();
+
 					break;
+
 				case "author":
 					articles = articles.OrderBy(x => x.Author).ToList();
+
 					break;
+
+                default:
+                    throw new ArgumentException();
 			}
 
 			foreach (Article article in articles)
@@ -53,9 +61,9 @@ namespace _03.Articles2._0
 
 		public Article(string title, string content, string author)
 		{
-			Title = title;
-			Content = content;
-			Author = author;
+			Title = title ?? throw new ArgumentNullException(nameof(title));
+			Content = content ?? throw new ArgumentNullException(nameof(content));
+			Author = author ?? throw new ArgumentNullException(nameof(author));
 		}
 
 		public override string ToString()
