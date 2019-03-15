@@ -17,6 +17,7 @@ namespace _07.MaxSequenceOfEqualElements
 				if (array[i] == array[i - 1])
 				{
 					len++;
+
 					if (len > bestLength)
 					{
 						bestLength = len;
