@@ -35,7 +35,12 @@ namespace _07.OrderByAge
 
 		public Person(string[] personInfo)
 		{
-			Name = personInfo[0];
+            if (personInfo == null)
+            {
+                throw new ArgumentNullException(nameof(personInfo));
+            }
+
+            Name = personInfo[0];
 			ID = personInfo[1];
 			Age = int.Parse(personInfo[2]);
 		}
