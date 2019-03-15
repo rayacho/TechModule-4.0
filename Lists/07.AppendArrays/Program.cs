@@ -13,7 +13,8 @@ namespace _07.AppendArrays
 
 			foreach (string array in input)
 			{
-				numbers.AddRange(array.Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToList());
+                List<int> toAdd = array.Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToList();
+                numbers.AddRange(toAdd);
 			}
 
 			foreach(int number in numbers)
