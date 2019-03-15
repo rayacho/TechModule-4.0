@@ -41,8 +41,8 @@ namespace _04.Students
 
 		public Student(string firstName, string lastName, double grade)
 		{
-			FirstName = firstName;
-			LastName = lastName;
+			FirstName = firstName ?? throw new ArgumentNullException(nameof(firstName));
+			LastName = lastName ?? throw new ArgumentNullException(nameof(lastName));
 			Grade = grade;
 		}
 
