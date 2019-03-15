@@ -61,6 +61,7 @@ namespace _04.PasswordValidator
 		static bool Digits(string input)
 		{
 			int count = 0;
+
 			foreach (char value in input)
 			{
 				if (value >= '0' && value <= '9')
