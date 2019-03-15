@@ -7,6 +7,7 @@ namespace _06.MiddleCharacters
 		static void Main(string[] args)
 		{
 			string input = Console.ReadLine();
+
 			Console.WriteLine(MiddleCharacter(input));
 		}
 
