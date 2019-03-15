@@ -17,9 +17,9 @@ namespace _01.Train
 			}
 
 			int maxCapacity = int.Parse(Console.ReadLine());
-			string command;
+			string command = Console.ReadLine();
 
-			while ((command = Console.ReadLine()) != "end")
+			while (command != "end")
 			{
 				string[] array = command.Split().ToArray();
 				string action = array[0];
@@ -29,7 +29,9 @@ namespace _01.Train
 					case "Add":
 						int number = int.Parse(array[1]);
 						train.Add(number);
+
 						break;
+
 					default:
 						int passengers = int.Parse(action);
 
@@ -41,9 +43,12 @@ namespace _01.Train
 								break;
 							}
 						}
+
 						break;
 				}
-			}
+
+                command = Console.ReadLine();
+            }
 
 			foreach (int wagon in train)
 			{
