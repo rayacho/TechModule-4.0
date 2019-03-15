@@ -7,7 +7,6 @@ namespace _09.KaminoFactory
 	{
 		static void Main(string[] args)
 		{
-			string input = " ";
 			int length = int.Parse(Console.ReadLine());
 			int[] lss = new int[length];
 			int lssLength = int.MinValue;
@@ -15,8 +14,9 @@ namespace _09.KaminoFactory
 			int lssSum = int.MinValue;
 			int lssStart = -1;
 			int index = 1;
+            string input = Console.ReadLine();
 
-			while ((input = Console.ReadLine()) != "Clone them!")
+            while (input != "Clone them!")
 			{
 				int[] data = input.Split(new char[] { '!' }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();
 				int currentLength = int.MinValue;
@@ -92,6 +92,7 @@ namespace _09.KaminoFactory
 				}
 
 				index++;
+                input = Console.ReadLine();
 			}
 
 			Console.WriteLine($"Best DNA sample {lssStart} with sum: {lssSum}.");
