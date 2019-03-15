@@ -8,15 +8,16 @@ namespace _11.ArrayManipulator
 		static void Main(string[] args)
 		{
 			int[] input = Console.ReadLine().Split().Select(int.Parse).ToArray();
-			string fakeCommand;
+			string fakeCommand = Console.ReadLine();
 
-			while ((fakeCommand = Console.ReadLine()) != "end")
+			while (fakeCommand != "end")
 			{
 				string[] command = fakeCommand.Split().ToArray();
 				switch (command[0])
 				{
 					case "exchange":
 						int index = int.Parse(command[1]);
+
 						if (index > input.Length - 1 || index < 0)
 						{
 							Console.WriteLine("Invalid index");
@@ -26,12 +27,15 @@ namespace _11.ArrayManipulator
 							input = Exchange(input, index);
 						}
 						break;
+
 					case "max":
 						string maxEvenOrOdd = command[1];
+
 						if (maxEvenOrOdd == "even")
 						{
 							int k = MaxEven(input)[0];
 							int maxIndex = MaxEven(input)[1];
+
 							if (k == int.MinValue)
 							{
 								Console.WriteLine("No matches");
@@ -45,6 +49,7 @@ namespace _11.ArrayManipulator
 						{
 							int k = MaxOdd(input)[0];
 							int maxIndex = MaxOdd(input)[1];
+
 							if (k == int.MinValue)
 							{
 								Console.WriteLine("No matches");
@@ -54,13 +59,17 @@ namespace _11.ArrayManipulator
 								Console.WriteLine(maxIndex);
 							}
 						}
+
 						break;
+
 					case "min":
 						string minEvenOrOdd = command[1];
+
 						if (minEvenOrOdd == "even")
 						{
 							int k = MinEven(input)[0];
 							int minIndex = MinEven(input)[1];
+
 							if (k == int.MinValue)
 							{
 								Console.WriteLine("No matches");
@@ -74,6 +83,7 @@ namespace _11.ArrayManipulator
 						{
 							int k = MinOdd(input)[0];
 							int minIndex = MinOdd(input)[1];
+
 							if (k == int.MinValue)
 							{
 								Console.WriteLine("No matches");
@@ -83,9 +93,12 @@ namespace _11.ArrayManipulator
 								Console.WriteLine(minIndex);
 							}
 						}
+
 						break;
+
 					case "first":
 						int firstCount = int.Parse(command[1]);
+
 						if (firstCount > input.Length || firstCount < 0)
 						{
 							Console.WriteLine("Invalid count");
@@ -102,9 +115,12 @@ namespace _11.ArrayManipulator
 								FirstOdd(input, firstCount);
 							}
 						}
+
 						break;
+
 					case "last":
 						int lastCount = int.Parse(command[1]);
+
 						if (lastCount > input.Length || lastCount < 0)
 						{
 							Console.WriteLine("Invalid count");
@@ -121,31 +137,40 @@ namespace _11.ArrayManipulator
 								LastOdd(input, lastCount);
 							}
 						}
+
 						break;
+
+                    default:
+                        throw new ArgumentException();
 				}
 			}
 
 			Console.WriteLine('[' + string.Join(", ", input) + ']');
+
+            fakeCommand = Console.ReadLine();
 		}
 
-		public static int[] Exchange(int[] input, int index)
+		private static int[] Exchange(int[] input, int index)
 		{
 			int[] output = new int[input.Length];
 			int j = 0;
+
 			for (int i = index + 1; i <= input.Length - 1; i++)
 			{
 				output[j] = input[i];
 				j++;
 			}
+
 			for (int i = 0; i <= index; i++)
 			{
 				output[j] = input[i];
 				j++;
 			}
+
 			return output;
 		}
 
-		public static int[] MaxOdd(int[] input)
+		private static int[] MaxOdd(int[] input)
 		{
 			int[] indexes = new int[2];
 			int maxOddIndex = 0;
@@ -171,10 +196,11 @@ namespace _11.ArrayManipulator
 
 			indexes[0] = k;
 			indexes[1] = maxOddIndex;
+
 			return indexes;
 		}
 
-		public static int[] MaxEven(int[] input)
+		private static int[] MaxEven(int[] input)
 		{
 			int[] indexes = new int[2];
 			int maxEvenIndex = 0;
@@ -200,10 +226,11 @@ namespace _11.ArrayManipulator
 
 			indexes[0] = k;
 			indexes[1] = maxEvenIndex;
+
 			return indexes;
 		}
 
-		public static int[] MinOdd(int[] input)
+		private static int[] MinOdd(int[] input)
 		{
 			int[] indexes = new int[2];
 			int minOddIndex = 0;
@@ -229,10 +256,11 @@ namespace _11.ArrayManipulator
 
 			indexes[0] = k;
 			indexes[1] = minOddIndex;
+
 			return indexes;
 		}
 
-		public static int[] MinEven(int[] input)
+		private static int[] MinEven(int[] input)
 		{
 			int[] indexes = new int[2];
 			int minEvenIndex = 0;
@@ -258,13 +286,15 @@ namespace _11.ArrayManipulator
 
 			indexes[0] = k;
 			indexes[1] = minEvenIndex;
+
 			return indexes;
 		}
 
-		public static void FirstEven(int[] input, int count)
+		private static void FirstEven(int[] input, int count)
 		{
 			int countEven = 0;
 			int[] output = new int[count];
+
 			for (int i = 0; i < input.Length; i++)
 			{
 				if (countEven >= count)
@@ -298,10 +328,11 @@ namespace _11.ArrayManipulator
 			}
 		}
 
-		public static void FirstOdd(int[] input, int count)
+		private static void FirstOdd(int[] input, int count)
 		{
 			int countOdd = 0;
 			int[] output = new int[count];
+
 			for (int i = 0; i < input.Length; i++)
 			{
 				if (countOdd >= count)
@@ -335,10 +366,11 @@ namespace _11.ArrayManipulator
 			}
 		}
 
-		public static void LastEven(int[] input, int count)
+		private static void LastEven(int[] input, int count)
 		{
 			int countEven = 0;
 			int[] output = new int[count];
+
 			for (int i = input.Length - 1; i >= 0; i--)
 			{
 				if (countEven >= count)
@@ -373,10 +405,12 @@ namespace _11.ArrayManipulator
 				Console.WriteLine("[" + string.Join(", ", result) + "]");
 			}
 		}
-		public static void LastOdd(int[] input, int count)
+
+		private static void LastOdd(int[] input, int count)
 		{
 			int countOdd = 0;
 			int[] output = new int[count];
+
 			for (int i = input.Length - 1; i >= 0; i--)
 			{
 				if (countOdd >= count)
