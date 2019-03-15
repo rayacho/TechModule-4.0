@@ -9,18 +9,21 @@ namespace _06.TriplesOfLatinLetters
 			int letters = int.Parse(Console.ReadLine());
 			char character;
 
-			for(int i = 0; i < letters; i++)
+			for(int firstLetter = 0; firstLetter < letters; firstLetter++)
 			{
-				for(int j = 0; j < letters; j++)
+				for(int secondLetter = 0; secondLetter < letters; secondLetter++)
 				{
-					for(int k = 0; k < letters; k++)
+					for(int thirdLetter = 0; thirdLetter < letters; thirdLetter++)
 					{
-						character = (char)('a' + i);
+						character = (char)('a' + firstLetter);
 						Console.Write(character);
-						character = (char)('a' + j);
+
+						character = (char)('a' + secondLetter);
 						Console.Write(character);
-						character = (char)('a' + k);
+
+						character = (char)('a' + thirdLetter);
 						Console.Write(character);
+
 						Console.WriteLine();
 					}
 				}
