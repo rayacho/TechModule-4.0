@@ -47,6 +47,7 @@ namespace _03.Vacation
                         throw new ArgumentException();
                     }
                     break;
+
                 case "Saturday":
                     if (type == "Students")
                     {
@@ -80,6 +81,7 @@ namespace _03.Vacation
                         throw new ArgumentException();
                     }
                     break;
+
                 case "Sunday":
                     if (type == "Students")
                     {
