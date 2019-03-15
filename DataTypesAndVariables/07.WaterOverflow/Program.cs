@@ -10,9 +10,10 @@ namespace _07.WaterOverflow
 			int lines = int.Parse(Console.ReadLine());
 			int sumCapacity = 0;
 			
-			for(int i = 0; i < lines; i++)
+			for(int line = 0; line < lines; line++)
 			{
 				int inputCapacity = int.Parse(Console.ReadLine());
+
 				if(inputCapacity > capacity)
 				{
 					Console.WriteLine("Insufficient capacity!");
