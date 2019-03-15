@@ -65,6 +65,7 @@ namespace _06.VehicleCatalogue
 			{
 				Console.WriteLine($"Cars have average horsepower of: {0:F2}.");
 			}
+
 			if (truckCounter > 0)
 			{
 				Console.WriteLine($"Trucks have average horsepower of: {trucksHorsePower / (double)truckCounter:F2}.");
@@ -88,7 +89,12 @@ namespace _06.VehicleCatalogue
 
 		public Vehicle(string[] vehicleInfo)
 		{
-			Type = vehicleInfo[0];
+            if (vehicleInfo == null)
+            {
+                throw new ArgumentNullException(nameof(vehicleInfo));
+            }
+
+            Type = vehicleInfo[0];
 			Model = vehicleInfo[1];
 			Color = vehicleInfo[2];
 			HorsePower = int.Parse(vehicleInfo[3]);
