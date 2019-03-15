@@ -10,7 +10,8 @@ namespace _06.CardsGame
 		{
 			List<int> firstPersonCards = Console.ReadLine().Split().Select(int.Parse).ToList();
 			List<int> secondPersonCards = Console.ReadLine().Split().Select(int.Parse).ToList();
-			  var count = 0;
+			int count = 0;
+
             while (true)
             {
                 if (firstPersonCards[count] > secondPersonCards[count])
@@ -32,12 +33,13 @@ namespace _06.CardsGame
 					firstPersonCards.RemoveAt(count);
 					secondPersonCards.RemoveAt(count);
                 }
+
                 if (firstPersonCards.Count == 0 || secondPersonCards.Count == 0)
                 {
                     break;
                 }
- 
             }
+
             if (firstPersonCards.Sum() > secondPersonCards.Sum())
             {
                 Console.WriteLine($"First player wins! Sum: {firstPersonCards.Sum()}");
