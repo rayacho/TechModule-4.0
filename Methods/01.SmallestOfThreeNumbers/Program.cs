@@ -12,13 +12,16 @@ namespace _01.SmallestOfThreeNumbers
 
 			Console.WriteLine(SmallestNumber(first, second, third));
 		}
+
 		static int SmallestNumber(int a, int b, int c)
 		{
 			int min = a;
+
 			if(b < min)
 			{
 				min = b;
 			}
+
 			if(c < min)
 			{
 				min = c;
