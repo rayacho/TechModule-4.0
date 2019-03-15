@@ -7,10 +7,12 @@ namespace _09.PalindomeIntegers
 	{
 		static void Main(string[] args)
 		{
-			string command;
-			while((command = Console.ReadLine()) != "END")
+			string command = Console.ReadLine();
+
+            while (command  != "END")
 			{
 				int number = int.Parse(command);
+
 				if(Palindrome(number))
 				{
 					Console.WriteLine("true");
@@ -19,6 +21,8 @@ namespace _09.PalindomeIntegers
 				{
 					Console.WriteLine("false");
 				}
+
+                command = Console.ReadLine();
 			}
 		}
 
@@ -27,7 +31,8 @@ namespace _09.PalindomeIntegers
 			string forward = number.ToString();
 			char[] forwardArray = forward.ToCharArray();
 			string reverse = string.Empty;
-			for (int i = forwardArray.Length - 1; i > -1; i--)
+
+			for (int i = forwardArray.Length - 1; i >= 0; i--)
 			{
 				reverse += forwardArray[i];
 			}
