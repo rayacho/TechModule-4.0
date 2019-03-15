@@ -15,6 +15,7 @@ namespace _10.SoftUniCoursePlanning
 			{
 				string input = Console.ReadLine();
 				string[] command = input.Split(':');
+
 				switch (command[0])
 				{
 					case "course start":
@@ -27,6 +28,7 @@ namespace _10.SoftUniCoursePlanning
 						}
 
 						finish = true;
+
 						break;
 
 					case "Add":
@@ -50,6 +52,7 @@ namespace _10.SoftUniCoursePlanning
 					case "Remove":
 						string lessonToRemove = command[1];
 						int index = courses.IndexOf(lessonToRemove);
+
 						if (index + 1 < courses.Count)
 						{
 							if (courses.Contains(command[1]))
@@ -58,6 +61,7 @@ namespace _10.SoftUniCoursePlanning
 								List<string> newList = new List<string>();
 								newList.Add(courses[index]);
 								string newString = lessonToRemove + "-Exercise";
+
 								if (newList[0] == newString)
 								{
 									courses.RemoveAt(index);
@@ -111,9 +115,11 @@ namespace _10.SoftUniCoursePlanning
 					case "Exercise":
 
 						string stringToAdd = command[1] + "-Exercise";
+
 						if (!courses.Contains(stringToAdd))
 						{
 							string LessionToAddExercise = command[1];
+
 							if (courses.Contains(command[1]))
 							{
 								int indexOfCourse = courses.IndexOf(command[1]);
