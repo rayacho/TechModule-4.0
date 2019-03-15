@@ -19,11 +19,6 @@ namespace _11.Snowballs
 				int snowballQuality = int.Parse(Console.ReadLine());
 				double snowballValue = 1;
 
-				//for (int j = 0; j < snowballQuality; j++)
-				//{
-				//	snowballValue *= (snowballSnow / snowballTime);
-				//}
-
 				snowballValue = Math.Pow((snowballSnow / snowballTime), snowballQuality);
 
 				if(snowballValue > max)
