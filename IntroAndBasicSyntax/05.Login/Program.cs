@@ -2,42 +2,43 @@
 
 namespace _05.Login
 {
-	class Program
-	{
-		static void Main(string[] args)
-		{
-			string name = Console.ReadLine();
-			string password = Reverse(name);
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string name = Console.ReadLine();
+            string password = Reverse(name);
+            string personTry = Console.ReadLine();
+            int number = 0;
 
-			string personTry = Console.ReadLine();
-			int number = 0;
+            while (personTry != password)
+            {
+                Console.WriteLine("Incorrect password. Try again.");
 
-			while (personTry != password)
-			{
-				Console.WriteLine("Incorrect password. Try again.");
+                number++;
+                personTry = Console.ReadLine();
 
-				number++;
-				personTry = Console.ReadLine();
+                if (personTry != password && number == 3)
+                {
+                    Console.WriteLine($"User {name} blocked!");
+                    return;
+                }
+            }
 
-				if (personTry != password && number == 3)
-				{
-					Console.WriteLine($"User {name} blocked!");
-					return;
-				}
-			}
+            Console.WriteLine($"User {name} logged in.");
+        }
 
-			Console.WriteLine($"User {name} logged in.");
-		}
+        public static string Reverse(string text)
+        {
+            char[] charArray = text.ToCharArray();
+            string reverse = string.Empty;
 
-		public static string Reverse(string text)
-		{
-			char[] charArray = text.ToCharArray();
-			string reverse = string.Empty;
-			for (int i = charArray.Length - 1; i > -1; i--)
-			{
-				reverse += charArray[i];
-			}
-			return reverse;
-		}
-	}
+            for (int i = charArray.Length - 1; i >= 0; i--)
+            {
+                reverse += charArray[i];
+            }
+
+            return reverse;
+        }
+    }
 }
