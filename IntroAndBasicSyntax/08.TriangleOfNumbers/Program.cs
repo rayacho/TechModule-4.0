@@ -14,6 +14,7 @@ namespace _08.TriangleOfNumbers
 				{
 					Console.Write(i + " ");
 				}
+
 				Console.WriteLine();
 			}
 		}
