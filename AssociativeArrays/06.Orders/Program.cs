@@ -34,7 +34,7 @@ namespace _06.Orders
 
             var newCourses = courses.OrderByDescending(x => x.Value.Count);
 
-            foreach (var course in newCourses)
+            foreach (KeyValuePair<string, List<string>> course in newCourses)
             {
                 Console.WriteLine($"{course.Key}: {course.Value.Count}");
 
