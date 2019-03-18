@@ -43,10 +43,12 @@ namespace _05.SoftuniParking
                             Console.WriteLine($"ERROR: user {user} not found");
                         }
                         break;
+                    default:
+                        throw new ArgumentException("Invalid command!");
                 }
             }
 
-            foreach (var person in parkingLot)
+            foreach (KeyValuePair<string, string> person in parkingLot)
             {
                 Console.WriteLine($"{person.Key} => {person.Value}");
             }
