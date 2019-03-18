@@ -9,7 +9,7 @@ namespace _08.CompanyUsers
         static void Main(string[] args)
         {
             Dictionary<string, List<string>> employ = new Dictionary<string, List<string>>();
-
+          
             while (true)
             {
                 string command = Console.ReadLine();
@@ -17,7 +17,6 @@ namespace _08.CompanyUsers
                 if (command == "End")
                 {
                     break;
-
                 }
 
                 string[] tokens = command.Split(" -> ");
@@ -37,15 +36,14 @@ namespace _08.CompanyUsers
                 {
                     employ[companyName].Add(employId);
                 }
-
             }
 
-            foreach (KeyValuePair<string, List<string>> item in employ.OrderBy(x => x.Key))
+            foreach (var item in employ.OrderBy(x => x.Key))
             {
                 Console.WriteLine(item.Key);
                 List<string> sorted = item.Value;
 
-                foreach (var employId in sorted)
+                foreach (string employId in sorted)
                 {
                     Console.WriteLine($"-- {employId}");
                 }
@@ -53,3 +51,4 @@ namespace _08.CompanyUsers
         }
     }
 }
+
