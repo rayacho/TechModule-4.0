@@ -45,7 +45,7 @@ namespace _03.LegendaryFarming
 
                 var sortedItems = items.OrderByDescending(x => x.Value).ThenBy(x => x.Key);
 
-                foreach (var pair in sortedItems)
+                foreach (KeyValuePair<string, int> pair in sortedItems)
                 {
                     Console.WriteLine($"{pair.Key}: {pair.Value}");
                 }
@@ -65,7 +65,7 @@ namespace _03.LegendaryFarming
 
                 var sortedItems = items.OrderByDescending(x => x.Value).ThenBy(x => x.Key);
 
-                foreach (var pair in sortedItems)
+                foreach (KeyValuePair<string, int> pair in sortedItems)
                 {
                     Console.WriteLine($"{pair.Key}: {pair.Value}");
                 }
@@ -85,7 +85,7 @@ namespace _03.LegendaryFarming
 
                 var sortedItems = items.OrderByDescending(x => x.Value).ThenBy(x => x.Key);
 
-                foreach (var pair in sortedItems)
+                foreach (KeyValuePair<string, int> pair in sortedItems)
                 {
                     Console.WriteLine($"{pair.Key}: {pair.Value}");
                 }
