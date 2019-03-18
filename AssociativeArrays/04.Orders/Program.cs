@@ -38,7 +38,7 @@ namespace _04.Orders
                 command = Console.ReadLine();
             }
 
-            foreach (var product in products)
+            foreach (KeyValuePair<string, List<double>> product in products)
             {
                 string name = product.Key;
                 double totalPrice = product.Value[0] * product.Value[1];
