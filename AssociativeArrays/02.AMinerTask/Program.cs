@@ -25,7 +25,7 @@ namespace _02.AMinerTask
                 resource = Console.ReadLine();
             }
 
-            foreach (var miner in resources)
+            foreach (KeyValuePair<string, double> miner in resources)
             {
                 Console.WriteLine($"{miner.Key} -> {miner.Value}");
             }
