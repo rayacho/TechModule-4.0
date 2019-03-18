@@ -31,7 +31,7 @@ namespace _07.StudentAcademy
 
             var newStudents = students.Where(x => x.Value.Average() >= 4.50).OrderByDescending(x => x.Value.Average());
 
-            foreach (var student in newStudents)
+            foreach (KeyValuePair<string, List<double>> student in newStudents)
             {
                 double average = student.Value.Average();
                 Console.WriteLine($"{student.Key} -> {average:F2}");
