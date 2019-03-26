@@ -28,23 +28,23 @@ namespace _09.StarEnigma
                     decryptedMessage.Append((char)(item - count));
                 }
 
-                string DecryptedTostring = decryptedMessage.ToString();
-                Match Matches = Regex.Match(DecryptedTostring, allregex);
-                string Name = Matches.Groups["Name"].Value;
-                string Population = Matches.Groups["population"].Value;
-                string AorD = Matches.Groups["AorD"].Value;
-                string Soldiers = Matches.Groups["soldiers"].Value;
+                string decrypted = decryptedMessage.ToString();
+                Match matches = Regex.Match(decrypted, allregex);
+                string name = matches.Groups["Name"].Value;
+                string population = matches.Groups["population"].Value;
+                string aOrD = matches.Groups["AorD"].Value;
+                string soldiers = matches.Groups["soldiers"].Value;
 
-                if (!string.IsNullOrEmpty(Name) && !string.IsNullOrEmpty(Population)
-                    && !string.IsNullOrEmpty(AorD) && !string.IsNullOrEmpty(Soldiers))
+                if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(population)
+                    && !string.IsNullOrEmpty(aOrD) && !string.IsNullOrEmpty(soldiers))
                 {
-                    if (AorD.ToString() == "A")
+                    if (aOrD.ToString() == "A")
                     {
-                        attacked.Add(Name.ToString());
+                        attacked.Add(name.ToString());
                     }
-                    else if (AorD.ToString() == "D")
+                    else if (aOrD.ToString() == "D")
                     {
-                        destroyed.Add(Name.ToString());
+                        destroyed.Add(name.ToString());
                     }
                 }
             }
@@ -62,7 +62,6 @@ namespace _09.StarEnigma
             {
                 Console.WriteLine($"-> {destroyedPlanet}");
             }
-
         }
     }
 }
